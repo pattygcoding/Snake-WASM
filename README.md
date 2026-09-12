@@ -1,18 +1,14 @@
 # Snake-WASM
 
+[![Rust](https://img.shields.io/badge/Rust-2021-orange?logo=rust&logoColor=white)](https://www.rust-lang.org/)
+[![Macroquad](https://img.shields.io/badge/Macroquad-0.4-black)](https://macroquad.rs/)
+[![WebAssembly](https://img.shields.io/badge/WebAssembly-wasm32-654ff0?logo=webassembly&logoColor=white)](https://webassembly.org/)
+[![HTML5 Canvas](https://img.shields.io/badge/HTML5-Canvas-e34f26?logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas)
+
 A small Rust + Macroquad Snake game for a portfolio page, with smooth movement,
 rounded procedural graphics, and keyboard and mouse controls. Graphics are drawn
 in code. The bundled Outfit font is compiled into the WASM with `include_bytes!`,
 so no image, texture, or font downloads are needed at runtime.
-
-## Project Structure
-
-- [src/main.rs](src/main.rs): application setup and frame loop.
-- [src/game.rs](src/game.rs): game state, timing, rules, scoring, and regression tests.
-- [src/input.rs](src/input.rs): keyboard and mouse actions.
-- [src/ui.rs](src/ui.rs): responsive layout, drawing, animation, and button hit testing.
-- [index.html](index.html): minimal browser host for the compiled WASM.
-- [assets/fonts/Outfit.ttf](assets/fonts/Outfit.ttf): embedded interface typeface.
 
 Rendering interpolates between grid positions without changing the 0.12-second
 movement tick. Game phases are explicit: ready, playing, paused, game over, and won.
